@@ -127,10 +127,10 @@ class Notes extends BaseController
         ]);
     }
 
-    public function releve($name): string
+    public function releve(): string
     {
-        $semestre = $this->request->getGet('semestre');
-        $idSemestre = $semestre->getIdByName($name);
+        // $semestre = $this->request->getGet('semestre');
+        // $idSemestre = $semestre->getIdByName($name);
 
         return view('pages/detail_note', [
             'title' => 'EtuNote - Releve de notes',
