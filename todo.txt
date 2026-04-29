@@ -1,0 +1,6 @@
+Pages:
+    -login (admin)
+    -ajout note
+    -liste des etudiants
+    -liste lien vers note (S3, S4 ...)
+    -detail note
