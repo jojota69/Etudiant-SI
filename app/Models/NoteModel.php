@@ -16,4 +16,6 @@ class NoteModel extends Model
         'option_id',
         'note'
     ];
+
+    
 }

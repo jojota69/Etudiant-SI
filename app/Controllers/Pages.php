@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\EtudiantModel;
+
 class Pages extends BaseController
 {
     public function login(): string
@@ -41,10 +43,13 @@ class Pages extends BaseController
 
     public function etudiants(): string
     {
+        $etudiant = new EtudiantModel();
+        $liste = $etudiant->findAll();
         return view('pages/liste_etudiants', [
             'title' => 'EtuNote - Liste des etudiants',
             'pageTitle' => 'Liste des etudiants',
             'activeMenu' => 'etudiants',
+            'liste' => $liste
         ]);
     }
 }

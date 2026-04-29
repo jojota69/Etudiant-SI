@@ -13,4 +13,11 @@ class SemestreModel extends Model
     protected $allowedFields    = [
         'nom'
     ];
+
+    public function getIdByName($name) {
+        $result = $this->where('nom',$name)
+                        ->select('id')
+                        ->first();
+        return $result;
+    }
 }
