@@ -2,10 +2,16 @@
 
 namespace App\Controllers;
 
+use App\Models\EtudiantModel;
+
 class Home extends BaseController
 {
     public function index(): string
     {
-        return view('dashboard');
+        $etudiant = new EtudiantModel();
+        return view('pages/login', [
+            'title' => 'EtuNote — Connexion',
+            'useAppLayout' => false,
+        ]);
     }
 }
