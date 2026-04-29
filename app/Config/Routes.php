@@ -19,3 +19,5 @@ $routes->get('/notes/ajout', 'Notes::ajout');
 $routes->post('/notes/ajout', 'Notes::ajout');
 $routes->get('/notes/semestres/(:num)', 'Notes::semestres/$1');
 $routes->get('/notes/releve', 'Notes::releve');
+
+
