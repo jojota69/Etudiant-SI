@@ -45,8 +45,10 @@ CREATE TABLE options (
 CREATE TABLE note (
     id INT AUTO_INCREMENT PRIMARY KEY,
     etudiant_id INT NOT NULL,
+    option_id INT NOT NULL,
     matiere_id INT NOT NULL,
     note DOUBLE NOT NULL,
+    FOREIGN KEY (option_id) REFERENCES options(id),
     FOREIGN KEY (etudiant_id) REFERENCES etudiant(id),
     FOREIGN KEY (matiere_id) REFERENCES matiere(id),
     FOREIGN KEY (id_semestre) REFERENCES semestre(id)

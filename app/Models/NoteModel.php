@@ -13,6 +13,7 @@ class NoteModel extends Model
     protected $allowedFields    = [
         'etudiant_id',
         'matiere_id',
+        'option_id',
         'note'
     ];
 }
