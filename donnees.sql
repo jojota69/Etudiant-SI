@@ -1,9 +1,5 @@
 INSERT INTO user (username, password) VALUES
-	('user1', 'pass123'),
-	('user2', 'pass123'),
-	('user3', 'pass123'),
-	('user4', 'pass123'),
-	('user5', 'pass123');
+    ('amin', );
 
 INSERT INTO etudiant (nom, prenom, etudiant_id, email) VALUES
     ('Rakoto', 'Tiana', 'ETU001', 'tiana.rakoto@example.com'),
