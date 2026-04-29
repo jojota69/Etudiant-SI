@@ -12,20 +12,42 @@
   </a>
 </div>
 
-<form onsubmit="return false">
+<form action="/notes/ajout" method="post">
+  <?= csrf_field() ?>
+
+  <?php if (!empty(session()->getFlashdata('success'))) : ?>
+    <div class="alert">
+      <?= esc(session()->getFlashdata('success')) ?>
+    </div>
+  <?php endif; ?>
+
+  <?php if (!empty($errors)) : ?>
+    <div class="alert">
+      <ul>
+        <?php foreach ($errors as $error) : ?>
+          <li><?= esc($error) ?></li>
+        <?php endforeach; ?>
+      </ul>
+    </div>
+  <?php endif; ?>
 
   <div class="form-card section-gap">
     <div class="form-section-title">1. Etudiant</div>
     <div class="form-grid">
       <div>
         <label class="field-label">Etudiant <span class="required">*</span></label>
-        <select>
+        <select name="etudiant_id">
           <option value="">-- Selectionner --</option>
-          <option value="ETU-0041">Andry Rakoto (ETU-0041)</option>
-          <option value="ETU-0042">Fanja Razafy (ETU-0042)</option>
-          <option value="ETU-0043">Hery Ranaivo (ETU-0043)</option>
-          <option value="ETU-0044">Lalao Rabenja (ETU-0044)</option>
-          <option value="ETU-0045">Miora Tsarafidy (ETU-0045)</option>
+          <?php if (!empty($etudiants)) : ?>
+            <?php foreach ($etudiants as $etudiant) : ?>
+              <option value="<?= esc($etudiant['id']) ?>">
+                <?= esc(trim(($etudiant['prenom'] ?? '') . ' ' . ($etudiant['nom'] ?? ''))) ?>
+                <?= !empty($etudiant['etudiant_id']) ? ' (' . esc($etudiant['etudiant_id']) . ')' : '' ?>
+              </option>
+            <?php endforeach; ?>
+          <?php else : ?>
+            <option value="" disabled>Aucun etudiant disponible</option>
+          <?php endif; ?>
         </select>
       </div>
     </div>
@@ -46,12 +68,15 @@
           </div>
           <div>
             <label class="field-label">Matiere <span class="required">*</span></label>
-            <select name="matieres[0][matiere]">
+            <select name="matieres[0][matiere_id]">
               <option value="">-- Selectionner --</option>
-              <option>Architecture</option>
-              <option>Base de donnees</option>
-              <option>Reseaux</option>
-              <option>Developpement web</option>
+              <?php if (!empty($matieres)) : ?>
+                <?php foreach ($matieres as $matiere) : ?>
+                  <option value="<?= esc($matiere['id']) ?>"><?= esc($matiere['nom']) ?></option>
+                <?php endforeach; ?>
+              <?php else : ?>
+                <option value="" disabled>Aucune matiere disponible</option>
+              <?php endif; ?>
             </select>
           </div>
           <div>
@@ -60,11 +85,15 @@
           </div>
           <div class="option-field" style="display:none">
             <label class="field-label">Option (S4)</label>
-            <select name="matieres[0][option]" disabled>
+            <select name="matieres[0][option_id]" disabled>
               <option value="">-- Selectionner --</option>
-              <option>Developpement</option>
-              <option>Base de donnees</option>
-              <option>Web &amp; design</option>
+              <?php if (!empty($options)) : ?>
+                <?php foreach ($options as $option) : ?>
+                  <option value="<?= esc($option['id']) ?>"><?= esc($option['nom']) ?></option>
+                <?php endforeach; ?>
+              <?php else : ?>
+                <option value="" disabled>Aucune option disponible</option>
+              <?php endif; ?>
             </select>
           </div>
         </div>
