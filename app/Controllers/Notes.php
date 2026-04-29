@@ -117,17 +117,21 @@ class Notes extends BaseController
         ]);
     }
 
-    public function semestres(): string
+    public function semestres($id): string
     {
         return view('pages/liste_notes_semestre', [
             'title' => 'EtuNote - Notes par semestre',
             'pageTitle' => 'Notes par semestre',
             'activeMenu' => 'notes_semestres',
+            'id_etudiant' => $id
         ]);
     }
 
-    public function releve(): string
+    public function releve($name): string
     {
+        $semestre = $this->request->getGet('semestre');
+        $idSemestre = $semestre->getIdByName($name);
+
         return view('pages/detail_note', [
             'title' => 'EtuNote - Releve de notes',
             'pageTitle' => 'Releve de notes',

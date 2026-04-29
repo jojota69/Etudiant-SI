@@ -57,39 +57,18 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="row-link" data-href="/notes/semestres" role="link" tabindex="0" style="cursor:pointer">
-        <td>
-          <div style="display:flex;align-items:center;gap:10px">
-            <div>
-              <a href="/notes/semestres" style="font-weight:600;text-decoration:none;color:inherit">Andry Rakoto</a>
-            </div>
-          </div>
-        </td>
-        <td style="color:var(--c-muted);font-family:monospace">ETU-0041</td>
-      </tr>
-
-      <tr class="row-link" data-href="/notes/semestres" role="link" tabindex="0" style="cursor:pointer">
-        <td>
-          <div style="display:flex;align-items:center;gap:10px">
-            <div>
-              <a href="/notes/semestres" style="font-weight:600;text-decoration:none;color:inherit">Fanja Razafy</a>
-            </div>
-          </div>
-        </td>
-        <td style="color:var(--c-muted);font-family:monospace">ETU-0042</td>
-      </tr>
-
-      <tr>
-        <td>
-          <div style="display:flex;align-items:center;gap:10px">
-            <div>
-              <a href="/notes/semestres" style="font-weight:600;text-decoration:none;color:inherit">Hery Ranaivo</a>
-            </div>
-          </div>
-        </td>
-        <td style="color:var(--c-muted);font-family:monospace">ETU-0043</td>
-      </tr>
-
+        <?php foreach($liste as $row) { ?>
+          <tr class="row-link" data-href="/notes/semestres/<?php echo $row['id']; ?>" role="link" tabindex="0" style="cursor:pointer">
+            <td>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div>
+                  <a href="/notes/semestres/<?php echo $row['id']; ?>" style="font-weight:600;text-decoration:none;color:inherit"><?php echo $row['nom']; ?> <?php echo $row['prenom']; ?></a>
+                </div>
+              </div>
+            </td>
+            <td style="color:var(--c-muted);font-family:monospace"><?php echo $row['etudiant_id']; ?></td>
+          </tr>
+        <?php } ?>
     </tbody>
   </table>
 

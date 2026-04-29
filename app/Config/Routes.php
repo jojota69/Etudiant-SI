@@ -17,5 +17,5 @@ $routes->get('/formulaire', 'Pages::formulaire');
 $routes->get('/etudiants', 'Pages::etudiants');
 $routes->get('/notes/ajout', 'Notes::ajout');
 $routes->post('/notes/ajout', 'Notes::ajout');
-$routes->get('/notes/semestres', 'Notes::semestres');
+$routes->get('/notes/semestres/(:num)', 'Notes::semestres/$1');
 $routes->get('/notes/releve', 'Notes::releve');
