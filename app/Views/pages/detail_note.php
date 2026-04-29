@@ -35,41 +35,7 @@
         <td style="padding: 8px; text-align: center;">10,5</td>
         <td style="padding: 8px; text-align: center;">P</td>
       </tr>
-      <tr>
-        <td style="padding: 8px;">INF202</td>
-        <td style="padding: 8px;">Bases de données objets</td>
-        <td style="padding: 8px; text-align: center;">6</td>
-        <td style="padding: 8px; text-align: center;">14</td>
-        <td style="padding: 8px; text-align: center;">B</td>
-      </tr>
-      <tr>
-        <td style="padding: 8px;">INF203</td>
-        <td style="padding: 8px;">Programmation système</td>
-        <td style="padding: 8px; text-align: center;">4</td>
-        <td style="padding: 8px; text-align: center;">11</td>
-        <td style="padding: 8px; text-align: center;">P</td>
-      </tr>
-      <tr>
-        <td style="padding: 8px;">INF208</td>
-        <td style="padding: 8px;">Réseaux informatiques</td>
-        <td style="padding: 8px; text-align: center;">6</td>
-        <td style="padding: 8px; text-align: center;">10</td>
-        <td style="padding: 8px; text-align: center;">P</td>
-      </tr>
-      <tr>
-        <td style="padding: 8px;">MTH201</td>
-        <td style="padding: 8px;">Méthodes numériques</td>
-        <td style="padding: 8px; text-align: center;">4</td>
-        <td style="padding: 8px; text-align: center;">6,5</td>
-        <td style="padding: 8px; text-align: center;">Comp.</td>
-      </tr>
-      <tr>
-        <td style="padding: 8px;">ORG201</td>
-        <td style="padding: 8px;">Bases de gestion</td>
-        <td style="padding: 8px; text-align: center;">4</td>
-        <td style="padding: 8px; text-align: center;">13</td>
-        <td style="padding: 8px; text-align: center;">AB</td>
-      </tr>
+     
       
       <!-- LIGNE TOTAL SEMESTRE 3[cite: 1] -->
       <tr style="border-top: 1px solid #333; border-bottom: 2px solid #333; font-weight: bold; background-color: #f9f9f9;">
