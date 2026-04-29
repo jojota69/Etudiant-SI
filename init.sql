@@ -50,6 +50,5 @@ CREATE TABLE note (
     note DOUBLE NOT NULL,
     FOREIGN KEY (option_id) REFERENCES options(id),
     FOREIGN KEY (etudiant_id) REFERENCES etudiant(id),
-    FOREIGN KEY (matiere_id) REFERENCES matiere(id),
-    FOREIGN KEY (id_semestre) REFERENCES semestre(id)
+    FOREIGN KEY (matiere_id) REFERENCES matiere(id)
 );
